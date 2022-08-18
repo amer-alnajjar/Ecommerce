@@ -1,0 +1,18 @@
+<div class="container mt-5 ">
+  <div class="d-flex justify-content-center align-items-center "  *ngIf="!loading">
+    <img src="{{ product.image }}" alt="">
+    <div>
+      <ul class=" list-unstyled ">
+        <li><b>Title : </b>{{ product.title }}</li>
+        <li><b>category : </b>{{ product.category }}</li>
+        <li><b>description : </b>{{ product.description }}</li>
+        <li><b>rate : </b>{{ product.rating.rate }}</li>
+        <li><b>count : </b>{{ product.rating.count }}</li>
+        <li><b>price : </b>{{ product.price }}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="text-center" *ngIf="loading">
+    <app-spinner></app-spinner>
+  </div>
+</div>

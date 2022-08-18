@@ -1,0 +1,12 @@
+<div class="container mt-5">
+  <div class="text-center">
+    <button class="btn btn-primary " (click)="showesales()">Sales</button>
+    <button class=" btn btn-success " (click)="showeproducts()">Add Products</button>
+    <button class="btn btn-danger " >Delete Products</button>
+    <button class="btn btn-dark " (click)="showeubdateproducts()">Ubdate Products</button>
+  </div>
+</div>
+
+<app-sales *ngIf="showeSales"></app-sales>
+<app-addproducts *ngIf="showeProducts"></app-addproducts>
+<app-ubdate-products *ngIf="ubdateProducts"></app-ubdate-products>

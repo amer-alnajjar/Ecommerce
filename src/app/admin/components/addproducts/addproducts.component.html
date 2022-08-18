@@ -1,0 +1,45 @@
+<form class="text-center  mt-3" *ngIf="showeform" [formGroup]="form">
+  <div class="d-flex">
+    <input type="text" class="form-control m-2" placeholder="Tital" name="Tital" formControlName="title">
+    <app-select [title]="''" [all]="false" [data]="categories" (onChange)="filtercategory($event)"></app-select>
+  </div>
+  <div class="d-flex">
+    <input type="number" class="form-control m-2" placeholder="Prise" name="" formControlName="price">
+    <input type="birthdate" class="form-control m-2" placeholder="Description" name="" formControlName="description">
+  </div>
+  <div class="d-flex">
+    <input type="file" class="form-control m-2" (change)="getImage($event)" name="">
+  </div>
+  <button class="btn btn-success w-25 " [disabled]="!form.valid"   (click)="addproduct()">Add Product</button>
+</form>
+
+
+<div class="container mt-3" >
+  <div class="add p-4">
+    <button class="btn btn-warning w-25 mb-3" (click)="showAddFoerm()">Add Product</button>
+    <div>
+      <table class="table text-center">
+        <thead>
+          <tr>
+            <th scope="col">images</th>
+            <th scope="col">Name</th>
+            <th scope="col">Category</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of product">
+            <td><img src="{{ item.image }}" alt="" width="100" height="100" /></td>
+            <td class="w-25">{{ item.title }}</td>
+            <td>{{ item.category }}</td>
+            <td>{{ item.price }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+<div class="text-center" *ngIf="loading">
+  <app-spinner></app-spinner>
+</div>

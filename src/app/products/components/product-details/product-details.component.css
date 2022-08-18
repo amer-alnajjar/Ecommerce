@@ -1,0 +1,22 @@
+* {
+  font-size: 25px;
+}
+li {
+  margin-bottom: 25px;
+}
+img {
+  width: 550px;
+  height: 550px;
+  margin-right: 100px;
+}
+@media (max-width: 700px) {
+  img {
+    width: 300px;
+    height: 300px;
+    margin-left: 90px;
+    margin-bottom: 20px;
+  }
+  .d-flex {
+    flex-direction: column;
+  }
+}

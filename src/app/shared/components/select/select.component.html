@@ -1,0 +1,7 @@
+<h4 class="text-danger">{{ title }}</h4>
+<select class="form-select " aria-label="Default select example" (change)="selectitems($event)">
+  <option value="all" *ngIf="all" selected>All</option>
+  <ng-container *ngFor="let category of data">
+    <option value="{{ category }}" [selected]="category == select">{{ category }}</option>
+  </ng-container>
+</select>

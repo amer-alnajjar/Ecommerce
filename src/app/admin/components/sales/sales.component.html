@@ -1,0 +1,44 @@
+<form class="container mt-5 cart p-2" [formGroup]="form">
+  <div class="row justify-content-center">
+    <div class="col-md-3">
+      <label for="" class="m-2"> Start Data</label>
+      <input type="date" formControlName="start" name="" id="" class="p-2 w-50">
+    </div>
+    <div class="col-md-3">
+      <label for="" class="m-2"> End Data</label>
+      <input type="date" name="" formControlName="end" id="" class="p-2 w-50">
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-success w-100 m-1" (click)="applyFilter()">Apply</button>
+    </div>
+  </div>
+</form>
+<div class="container  cart">
+  <div class="text-center mt-3">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Date</th>
+          <th scope="col">Quntity</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of cartproduct ;let i=index">
+          <td>{{ item.id }}</td>
+          <td>{{ item.date | date:"shortDate" }}</td>
+          <td>{{ item.products.length }}</td>
+          <td> <button class="btn btn-danger w-50 m-1" (click)="deletecrt(item.id)">Remove</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="text-center" *ngIf="loading">
+  <app-spinner></app-spinner>
+</div>

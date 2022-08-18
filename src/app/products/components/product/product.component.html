@@ -1,0 +1,17 @@
+<div class="card p-2" style="width: 17rem;">
+  <div class="card-body text-center" routerLink="/details/{{ data.id }}">
+    <img src="{{ data.image }}" class="card-img-top " alt="...">
+    <h3 class="card-title">{{ data.title }}</h3>
+    <p class="card-text">{{ data.description }}</p>
+  </div>
+  <div>
+    <div class="d-flex justify-content-between align-items-center">
+      <a class="btn btn-success p-2" *ngIf="!showcount" (click)="showecount()">Add to cart</a>
+      <div class="d-flex w-75 align-items-center" *ngIf="showcount">
+        <input type="number" name="" id="" class="form-control  m-1" placeholder="Count" [(ngModel)]="count">
+        <input type="submit" class="btn btn-danger  text-center" value="add" (click)="add()">
+      </div>
+      <span class="text-light ">{{ data.price }}</span>
+    </div>
+  </div>
+</div>

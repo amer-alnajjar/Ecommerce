@@ -1,0 +1,15 @@
+.navbar {
+  background-color: rgba(107, 0, 109);
+}
+.navbar a {
+  color: white;
+  font-size: 25px ;
+  margin-left: 50px;
+  transition: 0.3s;
+}
+.navbar a:hover {
+  color: black;
+}
+.navbar-toggler{
+  background-color: white;
+}
