@@ -3,7 +3,7 @@
     <h1 class="text-danger">Shopping Cart</h1>
     <div class="d-flex align-items-center justify-content-between mt-2 p-1">
       <p>You have <span class="text-danger">{{ cartproduct.length }}</span> item in your cart</p>
-      <button class="w-25 text-danger p-1" (click)="deleteALLitem()">Clear Shopping Cart</button>
+      <button class="text-danger p-1" (click)="deleteALLitem()">Clear Shopping Cart</button>
     </div>
     <div class="text-center mt-3">
       <table class="table">
@@ -19,14 +19,14 @@
         </thead>
         <tbody>
           <tr *ngFor="let item of cartproduct ;let i=index">
-            <td><img src="{{ item.item.image }}" alt="" width="100px" height="100px" /></td>
+            <td><img src="{{ item.item.image }}" alt="" width="70px" height="70px" /></td>
             <td class="w-25 pt-3">{{ item.item.title }}</td>
             <td class="pt-4">{{ item.item.price }}</td>
             <td><button class="btn btn-primary" (click)="plusCount(i)">+</button><input class="w-25 m-2" type="number"
                 (change)="detdctvalue()" [(ngModel)]="item.quantity"><button class="btn btn-primary"
                 (click)="minsCount(i)">-</button></td>
             <td class="pt-4">{{ item.item.price * item.quantity }} $</td>
-            <td> <button class="btn btn-danger w-50 m-1" (click)="deleteitem(i)">Remove</button>
+            <td> <button class="btn btn-danger  m-1" (click)="deleteitem(i)">Remove</button>
             </td>
           </tr>
           <tr>
@@ -35,7 +35,7 @@
             <td></td>
             <td></td>
             <td class="pt-4">Total : <span>{{ total }} $</span></td>
-            <td> <button class="btn btn-success w-50 m-1" (click)="addOrdre()">Order Now</button>
+            <td> <button class="btn btn-success  m-1" (click)="addOrdre()">Order Now</button>
             </td>
           </tr>
         </tbody>

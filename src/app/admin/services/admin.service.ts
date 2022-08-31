@@ -21,4 +21,8 @@ export class AdminService {
   creatProduct(model: any) {
     return this.http.post(environment.apiUrl + 'products', { model });
   }
+
+  deleteProduct(id: number) {
+    return this.http.delete(environment.apiUrl + 'products/' + id);
+  }
 }

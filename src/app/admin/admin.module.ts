@@ -7,9 +7,10 @@ import { SalesComponent } from './components/sales/sales.component';
 import { AddproductsComponent } from './components/addproducts/addproducts.component';
 import { RouterModule } from '@angular/router';
 import { UbdateProductsComponent } from './components/ubdate-products/ubdate-products.component';
+import { DeleteProductsComponent } from './components/delete-products/delete-products.component';
 
 @NgModule({
-  declarations: [AdminComponent, SalesComponent, AddproductsComponent, UbdateProductsComponent],
+  declarations: [AdminComponent, SalesComponent, AddproductsComponent, UbdateProductsComponent, DeleteProductsComponent],
   imports: [CommonModule, SharedModule, ReactiveFormsModule, RouterModule],
 })
 export class AdminModule {}
